@@ -16,12 +16,12 @@
 function prompt_skwp_precmd {
   # Get Git repository information.
   if (( $+functions[git-info] )); then
-    git-info
+    df -TP . | grep 'fuse.sshfs' &> /dev/null || git-info
   fi
 
   # Get Ruby information.
   if (( $+functions[ruby-info] )); then
-    ruby-info
+    df -TP . | grep 'fuse.sshfs' &> /dev/null || ruby-info
   fi
 }
 
