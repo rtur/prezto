@@ -4,16 +4,9 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+#
 
-if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] ; then
-  exec xinit -- :1 -nolisten tcp vt$XDG_VTNR
-fi
 
-if [[ -z $DISPLAY && $XDG_VTNR -eq 2 ]] ; then 
-  export XKB_DEFAULT_LAYOUT=de
-  export XKB_DEFAULT_VARIANT=nodeadkeys
-  exec sway
-fi
 
 #
 # Browser
